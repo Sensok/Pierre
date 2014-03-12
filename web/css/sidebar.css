@@ -1,0 +1,35 @@
+#sidebar {
+	float: right;
+	width: 240px;
+}
+
+#sidebar ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#sidebar li {
+	margin-bottom: 20px;
+}
+
+#sidebar li ul {
+	padding: 15px 20px;
+	line-height: 200%;
+}
+
+#sidebar li li {
+	margin: 0;
+	padding-left: 15px;
+	background: url(../img/img07.gif) no-repeat 0 11px;
+}
+
+#sidebar h2 {
+	width: 210px;
+	height: 30px;
+	padding: 5px 0 0 30px;
+	background: #FFB700 url(../img/img05.gif);
+	letter-spacing: -1px;
+	font-size: 1.6em;
+	color: #FFFFFF;
+}

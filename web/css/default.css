@@ -1,0 +1,144 @@
+form {
+	margin: 0;
+	padding: 0;
+}
+
+fieldset {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+input, textarea {
+	padding: 5px;
+	border: 1px solid #626262;
+	font: normal 1em "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+p, ol, ul {
+	margin: 0 0 2em 0;
+	line-height: 200%;
+}
+
+#blockquote {
+	margin: 0 0 0 1.5em;
+	padding-left: 1em;
+	border-left: 5px solid #DDDDDD;
+	color: #DF0101;
+}
+
+a {
+	color: #DF0101;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #000000;
+}
+
+img {
+	border: none;
+}
+
+img.left {
+	float: left;
+	margin: 8px 20px 0px 0px;
+	border: 2px solid #434343; 
+}
+
+#wrapper {
+	background: url(../img/img14.jpg) no-repeat center top;
+}
+
+#header {
+	width: 900px;
+	height: 128px;
+	margin: 0 auto;
+}
+
+#logo h1, #logo p {
+	float: left;
+	color: #DF0101;
+}
+
+#logo h1 {
+	height: 88px;
+	padding: 20px 90px 0 0;
+	font-size: 4em;
+}
+
+#logo p {
+	margin: 0 0 0 -80px;
+	padding: 55px 0 0 0;
+	line-height: normal;
+	letter-spacing: -1px;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+#logo a {
+	text-decoration: none;
+	color: #DF0101;
+	font-weight: bold;
+}
+
+#page {
+	width: 890px;
+	margin: 0 auto;
+	padding: 30px 0;
+}
+
+#calendar_wrap {
+	padding: 15px 20px;
+}
+
+#calendar table {
+	width: 100%;
+	background: #1F1F1D;
+	border: 1px solid #11110F;
+	text-align: center;
+}
+
+#calendar thead {
+	background: #161616;
+}
+
+#calendar tbody td {
+	background: #0F0F0D;
+	border: 1px solid #11110F;
+}
+
+#calendar #prev {
+	text-align: left;
+}
+
+#calendar #next {
+	text-align: right;
+}
+
+#calendar tfoot a {
+	text-decoration: none;
+	font-weight: bold;
+}
+
+#calendar #today {
+	background: #121210;
+	border: 1px solid #11110F;
+	font-weight: bold;
+	color: #DF0101
+}
+
+code {
+   background: #000000;
+   color: #ffffff;
+}
+
+td {
+   color: #ffffff;
+}
+
+table {
+   width:auto;
+   height: 100px;
+   overflow: auto;
+}

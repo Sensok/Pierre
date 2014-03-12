@@ -1,0 +1,47 @@
+#content {
+	float: left;
+	width: 430px;
+}
+
+.post {
+	margin-bottom: 50px;
+}
+
+.post .title {
+}
+
+.post .title h2 {
+	font-size: 2.2em;
+}
+
+.post .title p {
+	margin: 0;
+	line-height: normal;
+	color: #BABABA;
+}
+
+.post .title p a {
+	color: #BABABA;
+}
+
+.post .entry {
+	padding-top: 30px;
+}
+
+.post .links {
+	width: 410px;
+	height: 29px;
+	margin: 0;
+	padding: 6px 0 0 20px;
+	background: #F3F3F3 url(../img/img08.gif) no-repeat;
+}
+
+.post .links a {
+	padding: 0 23px;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.post .links a:hover {
+	text-decoration: underline;
+}
