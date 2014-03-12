@@ -14,7 +14,9 @@
 				<h2>Home Page</h2>				
 			</div>
 			<div class="entry">
-				<p>My Website</p>				
+				<p>We're a small non profit agency with large appetites. We can help you acquire an understanding of what good food really is. Plus we can help you get back your loved ones with these amazing treats.</p>				
+                                <p>Most of our clients have been gaining weight with us for at leat 10 years.</p>
+                                <p>If you're looking for out-of-the-ordinary food, feel free to try our mini Pierre feature.</p>
 			</div>
 		</div>
 	</div>
