@@ -9,13 +9,13 @@
 <div id="menu">
     <ul>
         <li class="current_page_item" style="z-index: 10">
-            <a href="index.htm">Home</a>
+            <a href="index.jsp">Home</a>
         </li>
 	<li class="current_page_item" style="z-index: 10">
             <a href="index.htm">Add</a>
         </li>
         <li class="current_page_item" style="z-index: 10">
-            <a href="index.htm">Find</a>
+            <a href="index.htm">Edit</a>
         </li>
         <li class="current_page_item" style="z-index: 10">
             <a href="index.htm">Randomize</a>
