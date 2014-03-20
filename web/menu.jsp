@@ -12,10 +12,10 @@
             <a href="index.jsp">Home</a>
         </li>
 	<li class="current_page_item" style="z-index: 10">
-            <a href="index.htm">Add</a>
+            <a href="addItem.jsp">Add</a>
         </li>
         <li class="current_page_item" style="z-index: 10">
-            <a href="index.htm">Edit</a>
+            <a href="editItem.jsp">Edit</a>
         </li>
         <li class="current_page_item" style="z-index: 10">
             <a href="index.htm">Randomize</a>
