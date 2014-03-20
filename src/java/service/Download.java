@@ -51,7 +51,6 @@ public class Download {
              String temp = child.name;
              if(temp.contains(".txt")){
                 mNames.add(child.name);
-                System.out.println(child.name);
              }
          }
        return mNames;
