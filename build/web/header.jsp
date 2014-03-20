@@ -25,7 +25,7 @@
 	<div id="wrapper">
             <div id="header">
 		<div id="logo">
-			<h1><a href="index.htm">Pierre</a></h1>
+			<h1><a href="index.jsp">Pierre</a></h1>
 			<p>
                             <span>Mini</span>                        
                         </p>

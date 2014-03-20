@@ -11,24 +11,17 @@ import com.dropbox.core.DbxEntry;
 import com.dropbox.core.DbxException;
 import com.dropbox.core.DbxRequestConfig;
 import com.dropbox.core.DbxUrlWithExpiration;
-import com.dropbox.core.DbxWriteMode;
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Locale;
 import java.util.Set;
-import java.util.StringTokenizer;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -58,8 +51,9 @@ public class Download {
          DbxEntry.WithChildren listing = client.getMetadataWithChildren("/MiniPierre/Recipes");
           for (DbxEntry child : listing.children) {
              String temp = child.name;
-             for (String st : ingrediants){
-            if(temp.contains(".txt") && temp.contains(st)){              
+             String temp2 = temp.toLowerCase();
+             for (String st : ingrediants){                 
+            if(temp.contains(".txt") && temp2.contains(st)){              
                  DbxUrlWithExpiration fileURL = client.createTemporaryDirectUrl("/MiniPierre/Recipes/" + temp);
                  mNames.add(new URL(fileURL.url)); 
                 }

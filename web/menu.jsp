@@ -21,7 +21,7 @@
             <a href="index.htm">Randomize</a>
         </li>       
     </ul>
-    <form action="search" method="get" style="vertical-align: middle; line-height: 25px; 
+    <form action="search" method="post" style="vertical-align: middle; line-height: 25px; 
           margin: 0px; padding: 0px; float: right; position: 15px; margin-top: 14px; margin-right: 10px;">
         <input type="text" name="query" id="query" size="40" value="">
         <input type="submit" value="Search">

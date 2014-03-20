@@ -4,5 +4,9 @@ body {
 	background: #d3d3d3; // url(../img/img12.jpg) repeat top left;
 	text-align: justify;
 	font: 13px "Trebuchet MS", Arial, Helvetica, sans-serif;
-	color: #7F7772;
+	color: #000000;
+}
+
+form {
+    color: #000000;
 }
