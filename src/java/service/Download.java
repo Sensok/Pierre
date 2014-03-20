@@ -56,12 +56,12 @@ public class Download {
          Set<URL> mNames = new HashSet<URL>();
          String[] ingrediants = pIngrediant.split(";");
          DbxEntry.WithChildren listing = client.getMetadataWithChildren("/MiniPierre/Recipes");
-         for (DbxEntry child : listing.children) {
+          for (DbxEntry child : listing.children) {
              String temp = child.name;
              for (String st : ingrediants){
-                if(temp.contains(".txt") && temp.contains(st)){
-                     DbxUrlWithExpiration fileURL = client.createTemporaryDirectUrl("/MiniPierre/Recipes" + child.name);
-                     mNames.add(new URL(fileURL.url));
+            if(temp.contains(".txt") && temp.contains(st)){              
+                 DbxUrlWithExpiration fileURL = client.createTemporaryDirectUrl("/MiniPierre/Recipes/" + temp);
+                 mNames.add(new URL(fileURL.url)); 
                 }
              }          
          }
