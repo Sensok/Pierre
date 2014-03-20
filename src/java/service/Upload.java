@@ -33,7 +33,7 @@ public class Upload
         DbxClient client = new DbxClient(config, accessToken);
         File inputFile = new File("C:\\Users\\Jordan Jensen\\Desktop\\Winter 14\\.emacs");//pFile;
         FileInputStream inputStream = new FileInputStream(inputFile);
-        try {
+        try { 
               DbxEntry.File uploadedFile = client.uploadFile("/MiniPierre/"+inputFile.getName(),
               DbxWriteMode.add(), inputFile.length(), inputStream);
               System.out.println("Uploaded: " + uploadedFile.toString());
