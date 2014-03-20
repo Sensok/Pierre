@@ -46,11 +46,13 @@ public class Download {
    public List DownloadFileNames() throws DbxException{
          List mNames = new ArrayList();
          init();
-         DbxEntry.WithChildren listing = client.getMetadataWithChildren("/MiniPierre/");
-         System.out.println("Files in the root path:");
+         DbxEntry.WithChildren listing = client.getMetadataWithChildren("/MiniPierre/Recipes");
          for (DbxEntry child : listing.children) {
+             String temp = child.name;
+             if(temp.contains(".txt")){
                 mNames.add(child.name);
                 System.out.println(child.name);
+             }
          }
        return mNames;
    }
