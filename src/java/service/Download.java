@@ -44,17 +44,19 @@ public class Download {
              outputStream.close();
             }
    }
-   public Set<URL> downloadFileNames(String pIngrediant) throws DbxException, MalformedURLException{
+   public Set<URL> downloadFileNames(String pIngrediant, String data) throws DbxException, MalformedURLException{
          init();        
          Set<URL> mNames = new HashSet<URL>();
          String[] ingrediants = pIngrediant.split(";");
-         DbxEntry.WithChildren listing = client.getMetadataWithChildren("/MiniPierre/Recipes");
+         String slash = (data.equals("") ? "" : "/");
+         DbxEntry.WithChildren listing = client.getMetadataWithChildren("/MiniPierre" + slash + data);
           for (DbxEntry child : listing.children) {
              String temp = child.name;
-             String temp2 = temp.toLowerCase();
+             String temp2 = temp.toLowerCase();             
              for (String st : ingrediants){                 
+                 
             if(temp.contains(".txt") && temp2.contains(st)){              
-                 DbxUrlWithExpiration fileURL = client.createTemporaryDirectUrl("/MiniPierre/Recipes/" + temp);
+                 DbxUrlWithExpiration fileURL = client.createTemporaryDirectUrl("/MiniPierre/" + data + slash + temp);
                  mNames.add(new URL(fileURL.url)); 
                 }
              }          

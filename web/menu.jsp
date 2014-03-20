@@ -18,7 +18,7 @@
             <a href="editItem.jsp">Edit</a>
         </li>
         <li class="current_page_item" style="z-index: 10">
-            <a href="index.htm">Randomize</a>
+            <a href="Randomize">Randomize</a>
         </li>       
     </ul>
     <form action="search" method="post" style="vertical-align: middle; line-height: 25px; 
