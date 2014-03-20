@@ -16,6 +16,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,21 +27,38 @@ import java.util.logging.Logger;
  * @author Jordan Jensen
  */
 public class Download {
-     public void Download(/*File pFile*/) throws FileNotFoundException, DbxException, IOException
+     private String accessToken;
+     private DbxRequestConfig config;
+     private DbxClient client;
+     public void DownloadFile(File pFile) throws FileNotFoundException, DbxException, IOException
    {
-       final String accessToken = "x1raWxa-_xwAAAAAAAAAAR3y5SlXrULyS1lyDIykZ5OWUhSEWS4kzYjNDf-nxUVY";
-        // Only display important log messages.
-          DbxRequestConfig config = new DbxRequestConfig(
-            "JavaTutorial/1.0", Locale.getDefault().toString());
-        DbxClient client = new DbxClient(config, accessToken);
+      
+       init();
+       
         FileOutputStream outputStream = new FileOutputStream("C:\\Users\\Jordan Jensen\\Desktop\\temp\\temp.txt");
         try {
-              DbxEntry.File downloadedFile = client.getFile("/MiniPierre/Cans.txt", null,
+              DbxEntry.File downloadedFile = client.getFile("/MiniPierre/" + pFile.getName(), null,
                outputStream);
-              System.out.println("Metadata: " + downloadedFile.toString());
             } finally {
              outputStream.close();
             }
    }
-   
+   public List DownloadFileNames() throws DbxException{
+         List mNames = new ArrayList();
+         init();
+         DbxEntry.WithChildren listing = client.getMetadataWithChildren("/MiniPierre/");
+         System.out.println("Files in the root path:");
+         for (DbxEntry child : listing.children) {
+                mNames.add(child.name);
+                System.out.println(child.name);
+         }
+       return mNames;
+   }
+
+    private void init() {
+       accessToken = "x1raWxa-_xwAAAAAAAAAAR3y5SlXrULyS1lyDIykZ5OWUhSEWS4kzYjNDf-nxUVY";
+        // Only display important log messages.
+        config = new DbxRequestConfig("MiniPierre", Locale.getDefault().toString());
+        client = new DbxClient(config, accessToken);
+    }
 }
