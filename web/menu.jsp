@@ -15,9 +15,6 @@
             <a href="addItem.jsp">Add</a>
         </li>
         <li class="current_page_item" style="z-index: 10">
-            <a href="editItem.jsp">Edit</a>
-        </li>
-        <li class="current_page_item" style="z-index: 10">
             <a href="Randomize">Randomize</a>
         </li>       
     </ul>
