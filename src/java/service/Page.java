@@ -11,7 +11,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.URL;
-import java.util.Set;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,8 +21,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Adam
  */
-@WebServlet(name = "search", urlPatterns = {"/search"})
-public class search extends HttpServlet {
+@WebServlet(name = "Page", urlPatterns = {"/Page"})
+public class Page extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,13 +36,9 @@ public class search extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        URL url = new URL(request.getParameter("name"));
         PrintWriter out = response.getWriter();
-        Download test = new Download();
-        String data = request.getParameter("query");
-        data = parse(data);
-        
         try {
-            Set<URL> downloadFileNames = test.downloadFileNames(data, "Recipes");        
             request.getRequestDispatcher("header.jsp").include(request, response);
             request.getRequestDispatcher("menu.jsp").include(request, response);
             out.print("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"");
@@ -52,22 +47,18 @@ public class search extends HttpServlet {
             out.print("<div id=\"content\">");
             out.print("<div class=\"post\">");
             out.print("<div class=\"title\">");
-            out.print("<h2>Search Results</h2>");
+            
+            BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
+            String strTemp = "";
+            strTemp = br.readLine();
+            out.print("<h2>" + strTemp + "</h2>");
             out.print("</div>");
             out.print("<div class=\"entry\">");
-            int i = 1;
-            for(URL item : downloadFileNames) {
-                           
-                BufferedReader br = new BufferedReader(new InputStreamReader(item.openStream()));            
-                String strTemp = "";
-                strTemp = br.readLine();
-                out.print("<form name=\"" + strTemp + "\" method=\"POST\" action=\"/MiniPierre/Page\">");
-                out.print("<input type=\"hidden\" name=\"" + "name" + "\" value=\"" + item + "\">");
-                out.print("<a href=\"javascript:document.forms[" + i + "].submit()\">" + strTemp + "</a>");               
-                out.print("</form>");                
-                out.println("<br />");
-                i++;
-            }	            
+            while (null != (strTemp = br.readLine())) 
+            {
+                out.print(strTemp + "\n");
+                out.print("<br />");
+            }
             out.print("</div>");
             out.print("</div>");
             out.print("</div>");
@@ -75,11 +66,7 @@ public class search extends HttpServlet {
 
             request.getRequestDispatcher("sidebar.jsp").include(request, response);
             request.getRequestDispatcher("footer.jsp").include(request, response);
-        }
-        catch (Exception e)
-        {
-        }
-        finally {
+        } finally {
             out.close();
         }
     }
@@ -122,10 +109,5 @@ public class search extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
-    private String parse(String data) {
-        data = data.replaceAll(" ", ";").toLowerCase();
-        return data + ";";
-    }
 
 }

@@ -18,23 +18,11 @@
 				<h2>Add Recipe</h2>				
 			</div>
 			<div class="entry">
-                            <form action="" method="POST">
+                            <form action="PostServlet" method="POST">
                                 <b>Name of Recipe:</b><input type="text" name="name"><br/>
                                 <b>List of Ingredients:</b> <br />
-                                <% 
-                                    int a = 0;
-                                    for(int i = 0; i < 8; i++)
-                                    {
-                                        for(int j = 0; j < 2; j++)
-                                        {
-                                            out.print("<input type=\"text\" name=\"" + a + "\">");
-                                            a++;
-                                        }
-                                        out.print("<br/>");
-                                    }
-                                %>
-                                
-                                <b>List of Directions:</b><br/><textarea rows="20" cols="75"></textarea><br/>
+                                <textarea rows="20" cols="50" name="ingred"></textarea><br/>                               
+                                <b>List of Directions:</b><br/><textarea rows="20" cols="50" name="direct"></textarea><br/>
                                 <input type="submit" value="Post!" >
                             </form>
 			</div>

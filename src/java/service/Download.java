@@ -55,7 +55,7 @@ public class Download {
              String temp2 = temp.toLowerCase();             
              for (String st : ingrediants){                 
                  
-            if(temp.contains(".txt") && temp2.contains(st)){              
+            if(temp.contains(".txt") && temp2.contains(st)){        
                  DbxUrlWithExpiration fileURL = client.createTemporaryDirectUrl("/MiniPierre/" + data + slash + temp);
                  mNames.add(new URL(fileURL.url)); 
                 }

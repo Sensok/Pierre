@@ -32,6 +32,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "Randomize", urlPatterns = {"/Randomize"})
 public class Randomize extends HttpServlet {
 
+    private Random r;
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -44,6 +46,7 @@ public class Randomize extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
       
+        r = new Random();
         try {
             response.setContentType("text/html;charset=UTF-8");
             PrintWriter out = response.getWriter();
@@ -52,20 +55,44 @@ public class Randomize extends HttpServlet {
             Set<URL> url = test.downloadFileNames(".txt", "");
             String title = "";
             String adj = "";
+            String meat = "";
+            String cans = "";
+            String liquid = "";
+            URL measures = null;
+            String dish = "";
+            String sideMeat = "";
+            URL spices = null;
+            String veggies = "";            
             URL[] y = url.toArray(new URL[0]);
             
-            adj = setValue(y[5]);
-            title = setValue(y[6]);            
-            /*        title = setValue(item, 5);
-            
-            BufferedReader br = new BufferedReader(new InputStreamReader(item.openStream()));
-            String strTemp = "";
-            strTemp = br.readLine();
-            */
+            for(URL x : y)
+            {
+                if(x.toString().contains("NameAdj"))
+                    adj = setValue(x);
+                else if(x.toString().contains("NameTitle"))
+                    title = setValue(x);            
+                else if(x.toString().contains("SideMeats"))
+                    sideMeat = setValue(x);
+                else if(x.toString().contains("Meats"))
+                    meat = setValue(x);
+                else if(x.toString().contains("Liquid"))
+                    liquid = setValue(x);
+                else if(x.toString().contains("Rice"))
+                    dish = setValue(x);
+                else if(x.toString().contains("Veg"))
+                    veggies = setValue(x);
+                else if(x.toString().contains("Spi"))
+                    spices = x;
+                else if(x.toString().contains("Meas"))
+                    measures = x;
+                else if(x.toString().contains("Can"))
+                    cans = setValue(x);
+                else
+                    System.out.println(x);
+            }
             try {
                 request.getRequestDispatcher("header.jsp").include(request, response);
-                request.getRequestDispatcher("3"
-                        + "menu.jsp").include(request, response);
+                request.getRequestDispatcher("menu.jsp").include(request, response);
                 out.print("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"");
                 out.print("\"http://www.w3.org/TR/html4/loose.dtd\">");
                 out.print("<!-- start content -->");
@@ -76,8 +103,36 @@ public class Randomize extends HttpServlet {
                 out.print(adj + " " + title);
                 out.print("</h2>");
                 out.print("</div>");
+                
                 out.print("<div class=\"entry\">");
-                // randomize values
+                
+                out.print("-----------------");
+                out.print("<br />");
+                out.print("Ingredients:");
+                out.print("<br />");
+                out.print(setValue(measures) + " " + meat);
+                out.print("<br />");
+                out.print(setValue(measures) + " " + sideMeat);
+                out.print("<br />");
+                out.print(setValue(measures) + " " + cans);
+                out.print("<br />");
+                out.print(setValue(measures) + " " + dish);
+                out.print("<br />");
+                out.print(setValue(measures) + " " + liquid);
+                out.print("<br />");
+                out.print(setValue(measures) + " " + veggies);
+                out.print("<br />");
+                out.print(setValue(measures) + " " + setValue(spices));
+                out.print("<br />");
+                out.print(setValue(measures) + " " + setValue(spices));
+                out.print("<br />");
+                out.print(setValue(measures) + " " + setValue(spices));
+                out.print("<br />");
+                out.print("<br />");
+                out.print("Directions:");
+                out.print("<br />");
+                out.print("Throw in crockpot on low for " + r.nextInt(24) + " hour(s)!");
+                out.print("<br />");
                 out.print("</div>");
                 out.print("</div>");
                 out.print("</div>");
@@ -153,13 +208,12 @@ public class Randomize extends HttpServlet {
             temp = new ArrayList<String>();
             while (null != (strTemp = br.readLine())) 
             {
-                System.out.println(strTemp);
                 temp.add(strTemp);
-            }
-            Random r=new Random();
+            }            
             i1=(r.nextInt(temp.size()));            
         } catch (IOException ex) {
         }
+        System.out.println(temp.get(i1));
         return temp.get(i1);
     }
 

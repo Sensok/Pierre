@@ -15,7 +15,7 @@
             <a href="addItem.jsp">Add</a>
         </li>
         <li class="current_page_item" style="z-index: 10">
-            <a href="Randomize">Randomize</a>
+            <a href="LoadRandomize">Randomize</a>
         </li>       
     </ul>
     <form action="search" method="post" style="vertical-align: middle; line-height: 25px; 

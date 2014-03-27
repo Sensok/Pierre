@@ -6,12 +6,10 @@
 
 package service;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.net.URL;
-import java.util.Set;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,8 +20,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Adam
  */
-@WebServlet(name = "search", urlPatterns = {"/search"})
-public class search extends HttpServlet {
+@WebServlet(name = "LoadRandomize", urlPatterns = {"/LoadRandomize"})
+public class LoadRandomize extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,49 +36,42 @@ public class search extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        Download test = new Download();
-        String data = request.getParameter("query");
-        data = parse(data);
-        
         try {
-            Set<URL> downloadFileNames = test.downloadFileNames(data, "Recipes");        
             request.getRequestDispatcher("header.jsp").include(request, response);
-            request.getRequestDispatcher("menu.jsp").include(request, response);
-            out.print("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"");
-            out.print("\"http://www.w3.org/TR/html4/loose.dtd\">");
-            out.print("<!-- start content -->");
-            out.print("<div id=\"content\">");
-            out.print("<div class=\"post\">");
-            out.print("<div class=\"title\">");
-            out.print("<h2>Search Results</h2>");
-            out.print("</div>");
-            out.print("<div class=\"entry\">");
-            int i = 1;
-            for(URL item : downloadFileNames) {
-                           
-                BufferedReader br = new BufferedReader(new InputStreamReader(item.openStream()));            
-                String strTemp = "";
-                strTemp = br.readLine();
-                out.print("<form name=\"" + strTemp + "\" method=\"POST\" action=\"/MiniPierre/Page\">");
-                out.print("<input type=\"hidden\" name=\"" + "name" + "\" value=\"" + item + "\">");
-                out.print("<a href=\"javascript:document.forms[" + i + "].submit()\">" + strTemp + "</a>");               
-                out.print("</form>");                
-                out.println("<br />");
-                i++;
-            }	            
-            out.print("</div>");
-            out.print("</div>");
-            out.print("</div>");
-            out.print("<!-- end content -->");
-
-            request.getRequestDispatcher("sidebar.jsp").include(request, response);
-            request.getRequestDispatcher("footer.jsp").include(request, response);
-        }
-        catch (Exception e)
-        {
-        }
-        finally {
+                request.getRequestDispatcher("menu.jsp").include(request, response);
+                out.print("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"");
+                out.print("\"http://www.w3.org/TR/html4/loose.dtd\">");
+                out.print("<!-- start content -->");
+                out.print("<div id=\"content\">");
+                out.print("<div class=\"post\">");
+                out.print("<div class=\"title\">");
+                
+                out.print("</div>");
+                out.print("<div id=\"preload\">\n" +
+                          "<img src=\"http://i.imgur.com/KUJoe.gif\">\n" +
+                          "</div>");
+                out.print("Trying to contact Martha Stewart from prison to create the perfect recipe for you!");
+                out.print("This may take awhile");
+                out.print("<div class=\"entry\">");
+                
+                out.print("</div>");
+                out.print("</div>");
+                out.print("</div>");
+                out.print("<!-- end content -->");
+                
+                request.getRequestDispatcher("sidebar.jsp").include(request, response);
+                request.getRequestDispatcher("footer.jsp").include(request, response);                                                                
+        } finally {
+            //response.sendRedirect("Randomize");
+            Randomize ran = new Randomize();
+            //ran.doGet(request, response);            
+            ran.processRequest(request, response);
+            
             out.close();
+            //response.sendRedirect("Randomize");
+            //Randomize ran = new Randomize();
+            //ran.doGet(request, response);            
+            ran.processRequest(request, response);
         }
     }
 
@@ -122,10 +113,5 @@ public class search extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
-    private String parse(String data) {
-        data = data.replaceAll(" ", ";").toLowerCase();
-        return data + ";";
-    }
 
 }
