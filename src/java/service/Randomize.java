@@ -64,7 +64,8 @@ public class Randomize extends HttpServlet {
             */
             try {
                 request.getRequestDispatcher("header.jsp").include(request, response);
-                request.getRequestDispatcher("menu.jsp").include(request, response);
+                request.getRequestDispatcher("3"
+                        + "menu.jsp").include(request, response);
                 out.print("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"");
                 out.print("\"http://www.w3.org/TR/html4/loose.dtd\">");
                 out.print("<!-- start content -->");
@@ -126,6 +127,9 @@ public class Randomize extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+      
+
+        
         processRequest(request, response);
     }
 
