@@ -3,11 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Adam/Documents/GitHub/Pierre/src/java/Desktop/TEST.java</file>
-            <file>file:/C:/Users/Adam/Documents/GitHub/Pierre/web/index.jsp</file>
-            <file>file:/C:/Users/Adam/Documents/GitHub/Pierre/src/java/service/Upload.java</file>
-            <file>file:/C:/Users/Adam/Documents/GitHub/Pierre/nbproject/build-impl.xml</file>
-            <file>file:/C:/Users/Adam/Documents/GitHub/Pierre/web/menu.jsp</file>
+            <file>file:/C:/Users/Jordan%20Jensen/Documents/NetBeansProjects/Pierre/web/spinner.jsp</file>
+            <file>file:/C:/Users/Jordan%20Jensen/Documents/NetBeansProjects/Pierre/web/index.jsp</file>
+            <file>file:/C:/Users/Jordan%20Jensen/Documents/NetBeansProjects/Pierre/web/rescources/IceCream.txt</file>
+            <file>file:/C:/Users/Jordan%20Jensen/Documents/NetBeansProjects/Pierre/web/css/default.css</file>
+            <file>file:/C:/Users/Jordan%20Jensen/Documents/NetBeansProjects/Pierre/web/menu.jsp</file>
+            <file>file:/C:/Users/Jordan%20Jensen/Documents/NetBeansProjects/Pierre/src/java/service/Randomize.java</file>
+            <file>file:/C:/Users/Jordan%20Jensen/Documents/NetBeansProjects/Pierre/web/header.jsp</file>
+            <file>file:/C:/Users/Jordan%20Jensen/Documents/NetBeansProjects/Pierre/web/rescources/JordansGoulash.txt</file>
+            <file>file:/C:/Users/Jordan%20Jensen/Documents/NetBeansProjects/Pierre/web/sidebar.jsp</file>
+            <file>file:/C:/Users/Jordan%20Jensen/Documents/NetBeansProjects/Pierre/web/rescources/ApplePie.txt</file>
+            <file>file:/C:/Users/Jordan%20Jensen/Documents/NetBeansProjects/Pierre/web/css/content.css</file>
+            <file>file:/C:/Users/Jordan%20Jensen/Documents/NetBeansProjects/Pierre/web/rescources/Pizza.txt</file>
+            <file>file:/C:/Users/Jordan%20Jensen/Documents/NetBeansProjects/Pierre/src/java/service/LoadRandomize.java</file>
         </group>
     </open-files>
 </project-private>

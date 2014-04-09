@@ -7,37 +7,37 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!-- start sidebar -->
 <div id="sidebar">
-    <ul>
-	<li id="categories">
+   <ul>
+    <%--	<li id="categories">
             <h2>Quick Recipes</h2>
             
             <ul>
                 <li>
                     <form name="strTemp" method="POST" action="Page">
-                    <input type="hidden" name="name" value="https://dl.dropboxusercontent.com/1/view/5z05rdwfuhig8vi/MiniPierre/Recipes/Jordan%27s%20Goulash.txt">
-                    <a href="javascript:document.forms[1].submit()">Jordan's Goulash</a>
+                    <input type="hidden" name="name" value="http://allrecipes.com/Recipe/Goulash/Detail.aspx?event8=1&prop24=SR_Title&e11=goulash&e8=Quick%20Search&event10=1&e7=Recipe&soid=sr_results_p1i1">
+                    <a href="javascript:document.forms[1].submit()">Goulash</a>
                     </form>
                 </li>
                 <li>
                     <form name="strTemp" method="POST" action="Page">
-                    <input type="hidden" name="name" value="https://dl.dropboxusercontent.com/1/view/uephi6mzgt96tqn/MiniPierre/Recipes/Pizza.txt">
+                    <input type="hidden" name="name" value="http://allrecipes.com/Recipe/Pita-Pizza/Detail.aspx?event8=1&prop24=SR_Thumb&e11=pizza&e8=Quick%20Search&event10=1&e7=Recipe&soid=sr_results_p1i3">
                     <a href="javascript:document.forms[2].submit()">Pizza</a>
                 </form>
                 </li>
                 <li>
                     <form name="strTemp" method="POST" action="Page">
-                    <input type="hidden" name="name" value="https://dl.dropboxusercontent.com/1/view/422xeo50j06g5u1/MiniPierre/Recipes/Ice%20Cream.txt">
+                    <input type="hidden" name="name" value="http://allrecipes.com/Recipe/Five-Minute-Ice-Cream/Detail.aspx?event8=1&prop24=SR_Title&e11=ice%20cream&e8=Quick%20Search&event10=1&e7=Home%20Page&soid=sr_results_p1i1">
                     <a href="javascript:document.forms[3].submit()">Ice Cream</a>
                     </form>
                 </li>                                
                 <li>
                     <form name="strTemp" method="POST" action="Page">
-                    <input type="hidden" name="name" value="https://dl.dropboxusercontent.com/1/view/9umojorcx80n0g6/MiniPierre/Recipes/Apple%20Pie.txt">
+                    <input type="hidden" name="name" value="http://allrecipes.com/recipe/apple-pie-by-grandma-ople/">
                     <a href="javascript:document.forms[4].submit()">Apple Pie</a>
                     </form>
                 </li>                
             </ul>
-        </li>
+        </li> --%>
 	<li id="calendar">
             <div id="calendar_wrap">
                 <p id="blockquote">"After a good dinner one can forgive anybody, even one's own relations."<br />-Oscar Wilde</p>					

@@ -19,6 +19,7 @@
 	<link href="css/sidebar.css" rel="stylesheet" type="text/css" media="screen" />
 	<link href="css/content.css" rel="stylesheet" type="text/css" media="screen" />
 	<link href="css/footer.css" rel="stylesheet" type="text/css" media="screen" />
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     </head>
     <body>
     <!-- start header -->

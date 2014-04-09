@@ -15,13 +15,13 @@
             <a href="addItem.jsp">Add</a>
         </li>
         <li class="current_page_item" style="z-index: 10">
-            <a href="LoadRandomize">Randomize</a>
+            <a id="rand" href="Randomize">Randomize</a>
         </li>       
     </ul>
     <form action="search" method="post" style="vertical-align: middle; line-height: 25px; 
           margin: 0px; padding: 0px; float: right; position: 15px; margin-top: 14px; margin-right: 10px;">
         <input type="text" name="query" id="query" size="40" value="">
-        <input type="submit" value="Search">
+        <button id="submit" type="submit" value="Search">Search</button>
         <input type="hidden" name="search" value="1">
     </form>
 </div>

@@ -37,6 +37,7 @@ public class search extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        
         PrintWriter out = response.getWriter();
         Download test = new Download();
         String data = request.getParameter("query");
@@ -46,6 +47,7 @@ public class search extends HttpServlet {
             Set<URL> downloadFileNames = test.downloadFileNames(data, "Recipes");        
             request.getRequestDispatcher("header.jsp").include(request, response);
             request.getRequestDispatcher("menu.jsp").include(request, response);
+            
             out.print("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"");
             out.print("\"http://www.w3.org/TR/html4/loose.dtd\">");
             out.print("<!-- start content -->");

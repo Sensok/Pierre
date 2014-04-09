@@ -50,7 +50,11 @@ public class Randomize extends HttpServlet {
         try {
             response.setContentType("text/html;charset=UTF-8");
             PrintWriter out = response.getWriter();
-            
+            request.getRequestDispatcher("header.jsp").include(request, response);
+            request.getRequestDispatcher("menu.jsp").include(request, response);
+            out.print("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"");
+            out.print("\"http://www.w3.org/TR/html4/loose.dtd\">");
+            out.print("<!-- start content -->");
             Download test = new Download();
             Set<URL> url = test.downloadFileNames(".txt", "");
             String title = "";
@@ -91,11 +95,7 @@ public class Randomize extends HttpServlet {
                     System.out.println(x);
             }
             try {
-                request.getRequestDispatcher("header.jsp").include(request, response);
-                request.getRequestDispatcher("menu.jsp").include(request, response);
-                out.print("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"");
-                out.print("\"http://www.w3.org/TR/html4/loose.dtd\">");
-                out.print("<!-- start content -->");
+                
                 out.print("<div id=\"content\">");
                 out.print("<div class=\"post\">");
                 out.print("<div class=\"title\">");
